@@ -6,15 +6,15 @@ const NotePage = () => {
     let [note,setNote] = useState(null)
 
     useEffect(()=>{
+        let getNote = async()=>{
+            if (noteId === 'new') return
+            let response = await fetch(`/api/notes/${noteId}`)
+            let data = await response.json()
+            setNote(data)
+        }
         getNote()
     },[noteId])
 
-    let getNote = async()=>{
-        if (noteId === 'new') return
-        let response = await fetch(`/api/notes/${noteId}`)
-        let data = await response.json()
-        setNote(data)
-    }
 
     let updateNote = async()=>{
         fetch(`/api/notes/${noteId}/update/`,{

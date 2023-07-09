@@ -15,7 +15,6 @@ let getTitle = (note)=>{
 }
 
 let getContent = (note) =>{
-  let title = getTitle(note)
   let content = note.body.replaceAll('\n','')
 
   if(content.length >45){
