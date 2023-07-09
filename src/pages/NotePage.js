@@ -8,7 +8,7 @@ const NotePage = () => {
     useEffect(()=>{
         let getNote = async()=>{
             if (noteId === 'new') return
-            let response = await fetch(`/api/notes/${noteId}`)
+            let response = await fetch(`https://notesapp-api-hp8j.onrender.com/api/notes/${noteId}`)
             let data = await response.json()
             setNote(data)
         }
@@ -17,7 +17,7 @@ const NotePage = () => {
 
 
     let updateNote = async()=>{
-        fetch(`/api/notes/${noteId}/update/`,{
+        fetch(`https://notesapp-api-hp8j.onrender.com/api/notes/${noteId}/update/`,{
             method:"PUT",
             headers:{
                 'Content-Type':'application/json'
@@ -27,7 +27,7 @@ const NotePage = () => {
     }
 
     let createNote = async()=>{
-        fetch(`/api/notes/create/`,{
+        fetch(`https://notesapp-api-hp8j.onrender.com/api/notes/create/`,{
             method:"POST",
             headers:{
                 'Content-Type':'application/json'
@@ -37,7 +37,7 @@ const NotePage = () => {
     }
 
     let deleteNote = async()=>{
-        fetch(`/api/notes/${noteId}/delete/`,{
+        fetch(`https://notesapp-api-hp8j.onrender.com/api/notes/${noteId}/delete/`,{
             method:'DELETE',
             'headers':{
                 'Content-Type':'application/json'

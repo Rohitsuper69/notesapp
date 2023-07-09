@@ -1,6 +1,5 @@
 {
   "name": "frontend",
-  "proxy": "https://notesapp-api-hp8j.onrender.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
