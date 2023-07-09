@@ -6,15 +6,16 @@ const NotesListPage = () => {
   let [notes, setNotes] = useState([])
 
   useEffect(()=>{
+    let getNotes = async () => {
+      let response = await fetch('https://notesapp-api-hp8j.onrender.com/api/notes/')
+      let data = await response.json()
+      console.log('DATA:',data)
+      setNotes(data)
+    }
     getNotes()
   },[])
 
-  let getNotes = async () => {
-    let response = await fetch('/api/notes/')
-    let data = await response.json()
-    console.log('DATA:',data)
-    setNotes(data)
-  }
+  
 
   return (
     <div>
